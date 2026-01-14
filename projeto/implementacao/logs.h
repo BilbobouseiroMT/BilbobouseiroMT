@@ -60,13 +60,10 @@ void registrarLog(const char *usuario, TipoLog tipo, const char *detalhe);
      de persistência.
    - Nenhuma lógica de gravação é definida aqui, apenas
      a interface pública.
-
- Exemplo de uso:
-   registrarLog("nicolas", LOG_LOGIN_SUCESSO, "Login realizado com sucesso");
-   registrarLog("nicolas", LOG_INSERCAO, "Aluno CPF=12345678900 inserido");
 */
 
 #endif /* LOGS_H */
+
 
 
 
