@@ -38,7 +38,35 @@ typedef enum {
    detalhe -> informações adicionais sobre a ação
 */
 void registrarLog(const char *usuario, TipoLog tipo, const char *detalhe);
+/*
+ Registra um evento de log no sistema.
+
+ Parâmetros:
+   usuario -> nome do usuário que realizou a ação
+              (ex.: "admin", "joao", "maria")
+
+   tipo    -> tipo de log a ser registrado
+              (um dos valores definidos em TipoLog,
+               como LOG_LOGIN_SUCESSO, LOG_INSERCAO, etc.)
+
+   detalhe -> informações adicionais sobre a ação
+              (ex.: "CPF duplicado", "Registro ID=42 inserido")
+
+ Comportamento esperado:
+   - Esta função deve ser chamada sempre que ocorrer
+     uma operação relevante no sistema.
+   - A implementação (em logs.c) será responsável por
+     gravar o evento em arquivo, console ou outro meio
+     de persistência.
+   - Nenhuma lógica de gravação é definida aqui, apenas
+     a interface pública.
+
+ Exemplo de uso:
+   registrarLog("nicolas", LOG_LOGIN_SUCESSO, "Login realizado com sucesso");
+   registrarLog("nicolas", LOG_INSERCAO, "Aluno CPF=12345678900 inserido");
+*/
 
 #endif /* LOGS_H */
+
 
 
