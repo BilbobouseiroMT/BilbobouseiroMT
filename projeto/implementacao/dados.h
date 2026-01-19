@@ -85,4 +85,10 @@ void carregarDados(void);
 */
 void salvarDados(void);
 
+/*
+Exibe o nome dos aluno ordenados por nome.
+*/
+
+void listarAlunosOrdenadosPorNome(void);
+
 #endif /* DADOS_H */
