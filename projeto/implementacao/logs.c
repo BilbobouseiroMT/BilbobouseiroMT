@@ -13,7 +13,9 @@
    ========================================================= */
 
 void registrarLog(const char *usuario, TipoLog tipo, const char *detalhe) {
-    FILE *arquivo = fopen("data/logs.txt", "a");
+    FILE *arquivo;
+    arquivo = fopen("../dados/logs.csv", "a");
+
     if (!arquivo) {
         perror("Erro ao abrir arquivo de logs");
         return;
@@ -50,5 +52,22 @@ void registrarLog(const char *usuario, TipoLog tipo, const char *detalhe) {
     fclose(arquivo);
 }
 
+void registrarSaida(const char *linha, const char *usuario)
+{
+    FILE *arquivo = fopen("../saida/saida.csv", "w"); // W !!
+    if (!arquivo) return;
 
+    time_t agora = time(NULL);
+    struct tm *infoTempo = localtime(&agora);
 
+    fprintf(arquivo, "[%02d/%02d/%04d %02d:%02d:%02d] Usuario: %s | Operação: %s\n", infoTempo->tm_mday,
+            infoTempo->tm_mon + 1,
+            infoTempo->tm_year + 1900,
+            infoTempo->tm_hour,
+            infoTempo->tm_min,
+            infoTempo->tm_sec,
+            usuario,
+            linha);
+
+    fclose(arquivo);
+}

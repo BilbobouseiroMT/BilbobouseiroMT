@@ -62,7 +62,13 @@ void registrarLog(const char *usuario, TipoLog tipo, const char *detalhe);
      a interface pública.
 */
 
-#endif /* LOGS_H */
+void registrarSaida(const char *linha, const char *usuario);
+
+/*
+Registra as operações e as mensagens exibidas na tela no arquivo saida.csv
+*/
+
+#endif /* LOGS_H */ 
 
 
 

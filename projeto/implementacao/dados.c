@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "dados.h"
+#include "logs.h"
 
 /* ============= ESTRUTURA INTERNA DO MÓDULO ================ */
 
@@ -31,20 +32,23 @@ void inicializarTabela(void) {
     }
 }
 
-int inserirAluno(const char *nome, const char *cpf, int idade) {
+int inserirAluno(const char *nome, const char *cpf, int idade, const char *usuario) {
     unsigned int chave = hash(cpf);
     unsigned int idx = indiceTabela(chave);
 
     ITEM *p = tabela[idx].inicio;
 
-    /* Verifica unicidade do CPF */
+    /*verifica a unicidade do cpf*/
     while (p) {
-        if (strcmp(p->cpf, cpf) == 0)
+        if (strcmp(p->cpf, cpf) == 0) {
+            registrarSaida("ERRO; CPF DUPLICADO", usuario);
+            printf("Não foi possível concluir a operação! (CPF já existente no banco de dados)\n");
             return 0;
+        }
         p = p->prox;
     }
 
-    ITEM *novo = (ITEM *) malloc(sizeof(ITEM));
+    ITEM *novo = malloc(sizeof(ITEM));
     if (!novo)
         return 0;
 
@@ -57,25 +61,43 @@ int inserirAluno(const char *nome, const char *cpf, int idade) {
     tabela[idx].inicio = novo;
     tabela[idx].qtde++;
 
+    char linha[150];
+    sprintf(linha, "INSERCAO;%s;%s;%d", nome, cpf, idade);
+
+    registrarSaida(linha, usuario);
+
     return 1;
 }
 
-ITEM* buscarAluno(const char *cpf) {
+/* Função para buscar o aluno */
+
+ITEM* buscarAluno(const char *cpf, const char *usuario) {
     unsigned int chave = hash(cpf);
     unsigned int idx = indiceTabela(chave);
+    char linha[150];
 
     ITEM *p = tabela[idx].inicio;
 
     while (p) {
-        if (strcmp(p->cpf, cpf) == 0)
+        if (p->r.chave == chave && strcmp(p->cpf, cpf) == 0) {
+            snprintf(linha, sizeof(linha),
+                     "BUSCA; Nome: %s; CPF: %s; Idade: %d",
+                     p->nome, p->cpf, p->idade);
+
+            registrarSaida(linha, usuario);
             return p;
+        }
         p = p->prox;
     }
 
+    strcpy(linha, "Falha na busca (Item não encontrado)");
+
+    registrarSaida(linha, usuario);
     return NULL;
 }
 
-int removerAluno(const char *cpf) {
+
+int removerAluno(const char *cpf, const char *usuario) {
     unsigned int chave = hash(cpf);
     unsigned int idx = indiceTabela(chave);
 
@@ -84,6 +106,7 @@ int removerAluno(const char *cpf) {
 
     while (p) {
         if (strcmp(p->cpf, cpf) == 0) {
+
             if (ant)
                 ant->prox = p->prox;
             else
@@ -91,19 +114,33 @@ int removerAluno(const char *cpf) {
 
             free(p);
             tabela[idx].qtde--;
+
+            char linha[150];
+
+            strcpy(linha, "EXCLUSÃO; SUCESSO");
+
+            registrarSaida(linha, usuario);
             return 1;
         }
+
         ant = p;
         p = p->prox;
     }
 
+    char linha[150];
+
+    printf("Não foi possível concluir a operação! (Aluno não encontrado no banco de dados para exclusão)\n");
+
+    strcpy(linha, "EXCLUSAO; NÃO ENCONTRADO");
+
+    registrarSaida(linha, usuario);
     return 0;
 }
 
 /* ======================= PERSISTÊNCIA EM ARQUIVO ================================= */
 
-void carregarDados(void) {
-    FILE *arq = fopen("data/alunos.csv", "r");
+void carregarDados(const char *usuario) {
+    FILE *arq = fopen("../dados/base.csv", "r");
     if (!arq)
         return;
 
@@ -111,14 +148,14 @@ void carregarDados(void) {
     int idade;
 
     while (fscanf(arq, "%49[^;];%11[^;];%d\n", nome, cpf, &idade) == 3) {
-        inserirAluno(nome, cpf, idade);
+        inserirAluno(nome, cpf, idade, usuario);
     }
 
     fclose(arq);
 }
 
 void salvarDados(void) {
-    FILE *arq = fopen("data/alunos.csv", "w");
+    FILE *arq = fopen("../dados/base.csv", "w");
     if (!arq)
         return;
 
@@ -145,28 +182,25 @@ static int compararPorNome(const void *a, const void *b) {
 }
 
 /* Lista todos os alunos ordenados por nome */
+
+
 void listarAlunosOrdenadosPorNome(void) {
+
     int total = 0;
 
-    /* 1. Conta quantos alunos existem */
-    for (int i = 0; i < TABLE_SIZE; i++) {
+    for (int i = 0; i < TABLE_SIZE; i++)
         total += tabela[i].qtde;
-    }
 
     if (total == 0) {
         printf("Nenhum aluno cadastrado.\n");
         return;
     }
 
-    /* 2. Cria vetor auxiliar de ponteiros */
     ITEM **vetor = malloc(total * sizeof(ITEM *));
-    if (!vetor) {
-        printf("Erro de memória.\n");
-        return;
-    }
+    if (!vetor) return;
 
-    /* 3. Copia os ponteiros da hash para o vetor */
     int k = 0;
+
     for (int i = 0; i < TABLE_SIZE; i++) {
         ITEM *p = tabela[i].inicio;
         while (p) {
@@ -175,18 +209,49 @@ void listarAlunosOrdenadosPorNome(void) {
         }
     }
 
-    /* 4. Ordena o vetor */
     qsort(vetor, total, sizeof(ITEM *), compararPorNome);
 
-    /* 5. Exibe os dados ordenados */
-    printf("\n--- LISTA DE ALUNOS (ORDENADA POR NOME) ---\n");
+    FILE *saida = fopen("../saida/saida.csv", "w");
+
     for (int i = 0; i < total; i++) {
-        printf("Nome: %s | CPF: %s | Idade: %d\n",
+
+        printf("%d - %s | %s | %d \n",
+               i+1,
                vetor[i]->nome,
                vetor[i]->cpf,
                vetor[i]->idade);
+
+        if (saida)
+            fprintf(saida, "%d;%s;%s;%d\n",
+                    i+1,
+                    vetor[i]->nome,
+                    vetor[i]->cpf,
+                    vetor[i]->idade);
     }
 
-    /* 6. Libera memória auxiliar */
+    if (saida) fclose(saida);
     free(vetor);
+}
+
+
+int editarAluno(const char *cpf, const char *novoNome, int novaIdade, const char *usuario) {
+    ITEM *p = buscarAluno(cpf, usuario);
+
+    if (!p)
+        return 0;
+
+    strcpy(p->nome, novoNome);
+    p->idade = novaIdade;
+
+    char linha[200];
+
+    snprintf(linha, sizeof(linha),
+             "EDICAO;%s;%s;%d",
+             p->nome, p->cpf, p->idade);
+
+    salvarDados();
+
+    registrarSaida(linha, usuario);
+
+    return 1;
 }

@@ -1,9 +1,7 @@
 #include <stdio.h>      
 #include <string.h>     
 #include "autenticacao.h"
-
-// Protótipo da função de log (implementada em logs.c ou aqui mesmo)
-void registrar_log(const char *acao, const char *usuario);
+#include "logs.h"
 
 /*
  Função: autenticar
@@ -23,8 +21,10 @@ void registrar_log(const char *acao, const char *usuario);
 int autenticar(char usuario_logado[]) {
     
     FILE *f;
+    char linha[150];
 
-    f = fopen("dados/usuarios.csv", "r");
+    f = fopen("../dados/usuarios.csv", "r");
+
 
     // Se não conseguiu abrir o arquivo, erro fatal
     if (f == NULL) {
@@ -32,8 +32,10 @@ int autenticar(char usuario_logado[]) {
         return 0;
     }
 
-    // Vetores para armazenar dados lidos do arquivo
-    char linha[100];      
+    // Detalhe do log
+    char detalhe[30];
+
+    // Vetores para armazenar dados lidos do arquivo    
     char login[50];      
     char senha[50];      
 
@@ -47,10 +49,13 @@ int autenticar(char usuario_logado[]) {
     while (!autenticado) {
 
         printf("Login: ");
-        scanf("%s", login_digitado);
+        fgets(login_digitado, sizeof(login_digitado), stdin);
+        login_digitado[strcspn(login_digitado,"\n")] = 0;
+
 
         printf("Senha: ");
-        scanf("%s", senha_digitada);
+        fgets(senha_digitada, sizeof(senha_digitada), stdin);
+        senha_digitada[strcspn(senha_digitada,"\n")] = 0;
 
         rewind(f);
 
@@ -82,18 +87,26 @@ int autenticar(char usuario_logado[]) {
 
         
         if (!autenticado) {
-            printf("Login ou senha incorretos.\n");
+            printf("\nLogin ou senha incorretos.\n");
+            strcpy(detalhe, "LOGIN INVALIDO");
+            strcpy(usuario_logado, "Desconhecido");
+            registrarLog(usuario_logado, LOG_LOGIN_FALHA, detalhe);
 
-            // Registra tentativa de login com erro no log
-            registrar_log("login_falhou", login_digitado);
+            strcpy(linha, "LOGIN; DADOS INVÁLIDOS");
+            registrarSaida(linha, usuario_logado);
+            
+
+            return 0;
         }
     }
 
     // Se saiu do while, é porque autenticou com sucesso
     printf("Login realizado com sucesso.\n");
+    strcpy(detalhe, "LOGIN REALIZADO COM SUCESSO");
+    registrarLog(usuario_logado, LOG_LOGIN_SUCESSO, detalhe);
 
-    // Registra login bem-sucedido no log
-    registrar_log("login_sucesso", usuario_logado);
+    strcpy(linha, "LOGIN; REALIZADO COM SUCESSO");
+    registrarSaida(linha, usuario_logado);
 
     // Fecha o arquivo de usuários
     fclose(f);
