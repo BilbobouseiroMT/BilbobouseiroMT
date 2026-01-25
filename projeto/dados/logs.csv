@@ -1,0 +1,42 @@
+[24/01/2026 20:46:20] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[24/01/2026 20:46:33] Usuario: eu | Acao: INSERCAO | Detalhe: Paulo
+[24/01/2026 20:46:55] Usuario: eu | Acao: EDICAO | Detalhe: EDICAO; CPF do registro: 12345678900
+[24/01/2026 20:46:58] Usuario: eu | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
+[24/01/2026 20:47:17] Usuario: eu | Acao: EXCLUSAO | Detalhe: EXCLUSAO; CPF do registro: 12345678900
+[24/01/2026 20:47:18] Usuario: eu | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
+[24/01/2026 20:47:21] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[24/01/2026 20:48:48] Usuario: ele | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[24/01/2026 20:49:04] Usuario: ele | Acao: INSERCAO | Detalhe: Paulo
+[24/01/2026 20:49:27] Usuario: ele | Acao: INSERCAO | Detalhe: Nicolas
+[24/01/2026 20:49:47] Usuario: ele | Acao: INSERCAO | Detalhe: Pablo
+[24/01/2026 20:49:53] Usuario: ele | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
+[24/01/2026 20:50:13] Usuario: ele | Acao: BUSCA | Detalhe: BUSCA; Parametro: 12345678900
+[24/01/2026 20:50:48] Usuario: ele | Acao: EDICAO | Detalhe: EDICAO; CPF do registro: 12345678900
+[24/01/2026 20:51:07] Usuario: ele | Acao: EXCLUSAO | Detalhe: EXCLUSAO; CPF do registro: 98765432100
+[24/01/2026 20:51:11] Usuario: ele | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[24/01/2026 20:55:11] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[24/01/2026 20:55:15] Usuario: eu | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
+[24/01/2026 21:02:48] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[24/01/2026 21:03:00] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[24/01/2026 21:03:03] Usuario: eu | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
+[24/01/2026 21:03:26] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[24/01/2026 21:06:15] Usuario: Desconhecido | Acao: LOGIN_FALHA | Detalhe: LOGIN INVALIDO
+[24/01/2026 21:06:48] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[24/01/2026 21:06:52] Usuario: eu | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
+[24/01/2026 21:07:16] Usuario: eu | Acao: INSERCAO | Detalhe: Nicolas
+[24/01/2026 21:07:30] Usuario: eu | Acao: BUSCA | Detalhe: BUSCA; Parametro: 12345678900
+[24/01/2026 21:07:39] Usuario: eu | Acao: EXCLUSAO | Detalhe: EXCLUSAO; CPF do registro: 12345678900
+[24/01/2026 21:08:17] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[24/01/2026 21:10:52] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[24/01/2026 21:10:54] Usuario: eu | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
+[24/01/2026 21:11:28] Usuario: eu | Acao: BUSCA | Detalhe: BUSCA; Parametro: 21345678900
+[24/01/2026 21:11:52] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[24/01/2026 21:13:31] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[24/01/2026 21:13:51] Usuario: eu | Acao: EDICAO | Detalhe: EDICAO; CPF do registro: 54689065433
+[24/01/2026 21:14:05] Usuario: eu | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
+[24/01/2026 21:14:25] Usuario: eu | Acao: EDICAO | Detalhe: EDICAO; CPF do registro: 12365498700
+[24/01/2026 21:14:28] Usuario: eu | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
+[24/01/2026 21:21:28] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[24/01/2026 21:21:38] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[24/01/2026 21:22:43] Usuario: eu | Acao: BUSCA | Detalhe: BUSCA; Parametro: 32145678900
+[24/01/2026 21:23:03] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao

@@ -55,7 +55,7 @@ void inicializarTabela(void);
   1 -> inserção realizada com sucesso
   0 -> CPF já existente ou erro de memória
 */
-int inserirAluno(const char *nome, const char *cpf, int idade);
+int inserirAluno(const char *nome, const char *cpf, int idade, const char *usuario);
 
 /*
  Busca um aluno pelo CPF.
@@ -63,7 +63,7 @@ int inserirAluno(const char *nome, const char *cpf, int idade);
   Ponteiro para o ITEM encontrado
   NULL caso não exista
 */
-ITEM* buscarAluno(const char *cpf);
+ITEM* buscarAluno(const char *cpf, const char *usuario);
 
 /*
  Remove um aluno pelo CPF.
@@ -71,13 +71,13 @@ ITEM* buscarAluno(const char *cpf);
   1 -> remoção realizada com sucesso
   0 -> aluno não encontrado
 */
-int removerAluno(const char *cpf);
+int removerAluno(const char *cpf, const char *usuario);
 
 /*
  Carrega os dados persistidos do arquivo para a memória.
  Deve ser chamada no início do programa após a inicialização.
 */
-void carregarDados(void);
+void carregarDados(const char *usuario);
 
 /*
  Salva os dados da memória para o arquivo.
@@ -91,4 +91,8 @@ Exibe o nome dos aluno ordenados por nome.
 
 void listarAlunosOrdenadosPorNome(void);
 
-#endif /* DADOS_H */
+int editarAluno(const char *cpf, const char *novoNome, int novaIdade, const char *usuario);
+
+
+#endif 
+/* DADOS_H */
