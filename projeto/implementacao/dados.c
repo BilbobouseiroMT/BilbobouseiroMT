@@ -38,6 +38,11 @@ int inserirAluno(const char *nome, const char *cpf, int idade, const char *usuar
 
     ITEM *p = tabela[idx].inicio;
 
+    if(idade < 18){
+        printf("Menor de idade não pode se matricular!\n");
+        return 0;
+    }
+
     /*verifica a unicidade do cpf*/
     while (p) {
         if (strcmp(p->cpf, cpf) == 0) {
@@ -116,6 +121,8 @@ int removerAluno(const char *cpf, const char *usuario) {
             tabela[idx].qtde--;
 
             char linha[150];
+
+            printf("\nOperação conlcuída com sucesso!\n");
 
             strcpy(linha, "EXCLUSÃO; SUCESSO");
 
