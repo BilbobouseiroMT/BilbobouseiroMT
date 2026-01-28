@@ -18,10 +18,10 @@ void limpar_restos_buffer(void) {
 void ler_texto(char *buffer, int tamanho) {
     if (fgets(buffer, tamanho, stdin) != NULL) {
         // Verifica se o \n foi lido
-        char *quebra_linha = strchr(buffer, '\n');
+        char *quebra_mensagem_log = strchr(buffer, '\n');
         
-        if (quebra_linha) {
-            *quebra_linha = '\0'; // Remove o \n
+        if (quebra_mensagem_log) {
+            *quebra_mensagem_log = '\0'; // Remove o \n
         } else {
             // Se não achou \n, significa que o usuário digitou demais
             // Precisamos limpar o buffer do teclado
@@ -42,8 +42,8 @@ int main(void){
 
     if (autenticar(usuario_logado)) {
 
-        inicializarTabela();
-        carregarDados(usuario_logado);
+        inicializar_tabela();
+        carregar_dados(usuario_logado);
 
         do {
             printf("\n--- MENU PRINCIPAL ---\n");
@@ -82,8 +82,8 @@ int main(void){
                     break;
                 }
 
-                if (inserirAluno(nome, cpf, idade, usuario_logado)) {
-                    salvarDados();
+                if (inserir_aluno(nome, cpf, idade, usuario_logado)) {
+                    salvar_dados();
                     registrarLog(usuario_logado, LOG_INSERCAO, nome);
                 }
                 break;
@@ -91,18 +91,18 @@ int main(void){
 
             /* ================================================= */
             case 2:
-                listarAlunosOrdenadosPorNome();
+                listar_alunos_ordenados_por_nome();
                 registrarLog(usuario_logado, LOG_LISTAGEM, "Exibicao da lista de alunos");
                 break;
 
             /* ================================================= */
             case 3: {
-                char linha[150];
+                char mensagem_log[150];
 
                 printf("CPF para busca: ");
                 ler_texto(cpf, sizeof(cpf));
 
-                ITEM *p = buscarAluno(cpf, usuario_logado);
+                ITEM *p = buscar_aluno(cpf, usuario_logado);
 
                 if (p) {
                     printf("\n----------------------------\n");
@@ -112,40 +112,46 @@ int main(void){
                     printf("\nAluno nao encontrado.\n");
                 }
 
-                snprintf(linha, sizeof(linha), "BUSCA; Parametro: %s", cpf);
+                snprintf(mensagem_log, sizeof(mensagem_log), "BUSCA; Parametro: %s", cpf);
                 
                 // Nota: registrarSaida parece duplicado com log, mas mantive seu original
-                registrarSaida(linha, usuario_logado); 
-                registrarLog(usuario_logado, LOG_BUSCA, linha);
+                registrarSaida(mensagem_log, usuario_logado); 
+                registrarLog(usuario_logado, LOG_BUSCA, mensagem_log);
                 break;
             }
 
             /* ================================================= */
             case 4: {
-                char novo_nome[50], linha[150];
+                char novo_nome[50], mensagem_log[200], novo_cpf[16];
                 int nova_idade;
 
                 printf("CPF do aluno que deseja alterar: ");
                 ler_texto(cpf, sizeof(cpf));
 
-                ITEM *i = buscarAluno(cpf, usuario_logado);
+                ITEM *i = buscar_aluno(cpf, usuario_logado);
 
-                if(!i){
-                    printf("Usuário não existente na base de dados!\n");
-                    break;
+                if (i) {
+                    printf("\n----------------------------\n");
+                    printf("CPF: %s\nNOME: %s\nIDADE: %d", i->cpf, i->nome, i->idade);
+                    printf("\n----------------------------\n");
+                } else {
+                    printf("\nAluno não encontrado.\n");
                 }
 
                 printf("Novo nome: ");
                 ler_texto(novo_nome, sizeof(novo_nome));
 
+                printf("Novo cpf: ");
+                ler_texto(novo_cpf, sizeof(novo_cpf));
+
                 printf("Nova idade: ");
                 ler_texto(buffer, sizeof(buffer));
                 
                 if (sscanf(buffer, "%d", &nova_idade) == 1) {
-                    editarAluno(cpf, novo_nome, nova_idade, usuario_logado);
+                    editar_aluno(cpf, novo_nome, nova_idade, novo_cpf, usuario_logado);
                     
-                    snprintf(linha, sizeof(linha), "EDICAO; CPF do registro: %s", cpf);
-                    registrarLog(usuario_logado, LOG_EDICAO, linha);
+                    snprintf(mensagem_log, sizeof(mensagem_log), "EDICAO | CPF do registro: %s", cpf);
+                    registrarLog(usuario_logado, LOG_EDICAO, mensagem_log);
                 } else {
                     printf("Idade invalida. Edicao cancelada.\n");
                 }
@@ -154,16 +160,16 @@ int main(void){
 
             /* ================================================= */
             case 5: {
-                char linha[150];
+                char mensagem_log[150];
 
                 printf("CPF para excluir: ");
                 ler_texto(cpf, sizeof(cpf));
 
-                if (removerAluno(cpf, usuario_logado)) {
-                    salvarDados();
+                if (remover_aluno(cpf, usuario_logado)) {
+                    salvar_dados();
 
-                    snprintf(linha, sizeof(linha), "EXCLUSAO; CPF do registro: %s", cpf);
-                    registrarLog(usuario_logado, LOG_EXCLUSAO, linha);
+                    snprintf(mensagem_log, sizeof(mensagem_log), "EXCLUSAO; CPF do registro: %s", cpf);
+                    registrarLog(usuario_logado, LOG_EXCLUSAO, mensagem_log);
                 }
                 break;
             }

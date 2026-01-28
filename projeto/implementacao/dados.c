@@ -11,7 +11,7 @@ static LISTA tabela[TABLE_SIZE];
 /* ================= FUNÇÕES AUXILIARES ===================== */
 
 /* Função hash para CPF */
-static unsigned int hash(const char *s) {
+static unsigned int gerar_hash(const char *s) {
     unsigned int h = 0;
     while (*s)
         h = h * 31 + (unsigned char)*s++;
@@ -19,22 +19,22 @@ static unsigned int hash(const char *s) {
 }
 
 /* Calcula o índice da tabela */
-static unsigned int indiceTabela(unsigned int chave) {
+static unsigned int calcular_indice(unsigned int chave) {
     return chave % TABLE_SIZE;
 }
 
 /* ============= IMPLEMENTAÇÃO DA INTERFACE PÚBLICA ================= */
 
-void inicializarTabela(void) {
+void inicializar_tabela(void) {
     for (int i = 0; i < TABLE_SIZE; i++) {
         tabela[i].inicio = NULL;
         tabela[i].qtde = 0;
     }
 }
 
-int inserirAluno(const char *nome, const char *cpf, int idade, const char *usuario) {
-    unsigned int chave = hash(cpf);
-    unsigned int idx = indiceTabela(chave);
+int inserir_aluno(const char *nome, const char *cpf, int idade, const char *usuario) {
+    unsigned int chave = gerar_hash(cpf);
+    unsigned int idx = calcular_indice(chave);
 
     ITEM *p = tabela[idx].inicio;
 
@@ -76,9 +76,9 @@ int inserirAluno(const char *nome, const char *cpf, int idade, const char *usuar
 
 /* Função para buscar o aluno */
 
-ITEM* buscarAluno(const char *cpf, const char *usuario) {
-    unsigned int chave = hash(cpf);
-    unsigned int idx = indiceTabela(chave);
+ITEM* buscar_aluno(const char *cpf, const char *usuario) {
+    unsigned int chave = gerar_hash(cpf);
+    unsigned int idx = calcular_indice(chave);
     char linha[150];
 
     ITEM *p = tabela[idx].inicio;
@@ -102,9 +102,9 @@ ITEM* buscarAluno(const char *cpf, const char *usuario) {
 }
 
 
-int removerAluno(const char *cpf, const char *usuario) {
-    unsigned int chave = hash(cpf);
-    unsigned int idx = indiceTabela(chave);
+int remover_aluno(const char *cpf, const char *usuario) {
+    unsigned int chave = gerar_hash(cpf);
+    unsigned int idx = calcular_indice(chave);
 
     ITEM *p = tabela[idx].inicio;
     ITEM *ant = NULL;
@@ -146,7 +146,7 @@ int removerAluno(const char *cpf, const char *usuario) {
 
 /* ======================= PERSISTÊNCIA EM ARQUIVO ================================= */
 
-void carregarDados(const char *usuario) {
+void carregar_dados(const char *usuario) {
     FILE *arq = fopen("../dados/base.csv", "r");
     if (!arq)
         return;
@@ -155,13 +155,13 @@ void carregarDados(const char *usuario) {
     int idade;
 
     while (fscanf(arq, "%49[^;];%11[^;];%d\n", nome, cpf, &idade) == 3) {
-        inserirAluno(nome, cpf, idade, usuario);
+        inserir_aluno(nome, cpf, idade, usuario);
     }
 
     fclose(arq);
 }
 
-void salvarDados(void) {
+void salvar_dados(void) {
     FILE *arq = fopen("../dados/base.csv", "w");
     if (!arq)
         return;
@@ -182,7 +182,7 @@ void salvarDados(void) {
    ========================================================= */
 
 /* Função auxiliar de comparação */
-static int compararPorNome(const void *a, const void *b) {
+static int comparar_por_nome(const void *a, const void *b) {
     ITEM *x = *(ITEM **)a;
     ITEM *y = *(ITEM **)b;
     return strcmp(x->nome, y->nome);
@@ -191,7 +191,7 @@ static int compararPorNome(const void *a, const void *b) {
 /* Lista todos os alunos ordenados por nome */
 
 
-void listarAlunosOrdenadosPorNome(void) {
+void listar_alunos_ordenados_por_nome(void) {
 
     int total = 0;
 
@@ -216,7 +216,7 @@ void listarAlunosOrdenadosPorNome(void) {
         }
     }
 
-    qsort(vetor, total, sizeof(ITEM *), compararPorNome);
+    qsort(vetor, total, sizeof(ITEM *), comparar_por_nome);
 
     FILE *saida = fopen("../saida/saida.csv", "w");
 
@@ -241,24 +241,64 @@ void listarAlunosOrdenadosPorNome(void) {
 }
 
 
-int editarAluno(const char *cpf, const char *novoNome, int novaIdade, const char *usuario) {
-    ITEM *p = buscarAluno(cpf, usuario);
-
-    if (!p)
+/* * Funcao: editar_aluno
+ * --------------------
+ * Atualiza os dados de um aluno. Se o CPF for alterado, a funcao realiza
+ * o re-hashing do registro para manter a integridade da tabela hash.
+ *
+ * cpf_antigo: CPF atual do aluno para busca
+ * novo_nome: Novo nome a ser atribuído
+ * nova_idade: Nova idade a ser atribuída
+ * novo_cpf: Novo CPF (pode ser igual ao antigo se nao desejar alterar)
+ * usuario: Usuario que realiza a operacao (para auditoria)
+ *
+ * retorna: 1 em caso de sucesso, 0 se o aluno nao existir ou o novo CPF for duplicado.
+ */
+int editar_aluno(const char *cpf_antigo, const char *novo_nome, int nova_idade, const char *novo_cpf, const char *usuario) {
+    
+    // 1. Busca o aluno original
+    ITEM *aluno_original = buscar_aluno(cpf_antigo, usuario);
+    if (!aluno_original) {
+        printf("Erro: Aluno com CPF %s não encontrado.\n", cpf_antigo);
         return 0;
+    }
 
-    strcpy(p->nome, novoNome);
-    p->idade = novaIdade;
+    // 2. Caso o CPF esteja sendo alterado, precisamos validar a unicidade do novo
+    if (strcmp(cpf_antigo, novo_cpf) != 0) {
+        // Verifica se o novo_cpf ja pertence a outro aluno
+        if (buscar_aluno(novo_cpf, usuario) != NULL) {
+            printf("Erro: O novo CPF %s ja esta em uso.\n", novo_cpf);
+            registrarSaida("EDICAO; FALHA; CPF DUPLICADO", usuario);
+            return 0;
+        }
 
-    char linha[200];
+        /* * Re-hashing
+         * Se o CPF mudou, o indice na tabela provavelmente mudara. 
+         * A forma mais segura e remover o antigo e inserir o novo.
+         */
+        
+        // Remove o registro antigo (isso trata ponteiros e tabela[idx].qtde)
+        remover_aluno(cpf_antigo, usuario);
 
-    snprintf(linha, sizeof(linha),
-             "EDICAO;%s;%s;%d",
-             p->nome, p->cpf, p->idade);
+        // Insere como um novo registro (isso gera novo hash e novo log de insercao)
+        if (inserir_aluno(novo_nome, novo_cpf, nova_idade, usuario)) {
+            registrarSaida("EDICAO; SUCESSO; CPF ALTERADO", usuario);
+            return 1;
+        }
+        return 0;
+    }
 
-    salvarDados();
+    // 3. Caso o CPF seja o mesmo, apenas atualizamos os outros campos in-place
+    strcpy(aluno_original->nome, novo_nome);
+    aluno_original->idade = nova_idade;
 
-    registrarSaida(linha, usuario);
+    // Atualiza o arquivo fisico
+    salvar_dados();
 
+    char mensagem_log[200];
+    snprintf(mensagem_log, sizeof(mensagem_log), "EDICAO; NOME:%s; IDADE:%d", novo_nome, nova_idade);
+    registrarSaida(mensagem_log, usuario);
+
+    printf("Dados atualizados com sucesso!\n");
     return 1;
 }
