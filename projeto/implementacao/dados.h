@@ -47,7 +47,7 @@ typedef struct {
  Inicializa a estrutura de dados.
  Deve ser chamada uma única vez no início do programa.
 */
-void inicializarTabela(void);
+void inicializar_tabela(void);
 
 /*
  Insere um novo aluno no sistema.
@@ -55,7 +55,7 @@ void inicializarTabela(void);
   1 -> inserção realizada com sucesso
   0 -> CPF já existente ou erro de memória
 */
-int inserirAluno(const char *nome, const char *cpf, int idade, const char *usuario);
+int inserir_aluno(const char *nome, const char *cpf, int idade, const char *usuario);
 
 /*
  Busca um aluno pelo CPF.
@@ -63,7 +63,7 @@ int inserirAluno(const char *nome, const char *cpf, int idade, const char *usuar
   Ponteiro para o ITEM encontrado
   NULL caso não exista
 */
-ITEM* buscarAluno(const char *cpf, const char *usuario);
+ITEM* buscar_aluno(const char *cpf, const char *usuario);
 
 /*
  Remove um aluno pelo CPF.
@@ -71,27 +71,27 @@ ITEM* buscarAluno(const char *cpf, const char *usuario);
   1 -> remoção realizada com sucesso
   0 -> aluno não encontrado
 */
-int removerAluno(const char *cpf, const char *usuario);
+int remover_aluno(const char *cpf, const char *usuario);
 
 /*
  Carrega os dados persistidos do arquivo para a memória.
  Deve ser chamada no início do programa após a inicialização.
 */
-void carregarDados(const char *usuario);
+void carregar_dados(const char *usuario);
 
 /*
  Salva os dados da memória para o arquivo.
  Deve ser chamada antes do encerramento do programa.
 */
-void salvarDados(void);
+void salvar_dados(void);
 
 /*
 Exibe o nome dos aluno ordenados por nome.
 */
 
-void listarAlunosOrdenadosPorNome(void);
+void listar_alunos_ordenados_por_nome(void);
 
-int editarAluno(const char *cpf, const char *novoNome, int novaIdade, const char *usuario);
+editar_aluno(const char *cpf_antigo, const char *novo_nome, int nova_idade, const char *novo_cpf, const char *usuario);
 
 
 #endif 
