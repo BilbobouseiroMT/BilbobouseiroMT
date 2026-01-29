@@ -77,3 +77,12 @@
 [27/01/2026 08:07:48] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
 [27/01/2026 08:07:48] Usuario: eu | Acao: EXCLUSAO | Detalhe: EXCLUSAO; CPF do registro: 12345678900
 [27/01/2026 08:07:48] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[29/01/2026 06:30:02] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[29/01/2026 06:30:02] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[29/01/2026 06:54:21] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[29/01/2026 06:54:27] Usuario: eu | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
+[29/01/2026 06:54:40] Usuario: eu | Acao: INSERCAO | Detalhe: Paulo
+[29/01/2026 06:54:43] Usuario: eu | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
+[29/01/2026 06:55:15] Usuario: eu | Acao: EDICAO | Detalhe: EDICAO | CPF do registro: 12345678900
+[29/01/2026 06:55:18] Usuario: eu | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
+[29/01/2026 06:55:22] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
