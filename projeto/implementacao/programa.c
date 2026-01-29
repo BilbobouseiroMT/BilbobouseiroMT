@@ -1,3 +1,11 @@
+/* 
+* DISCIPLINA: Algoritmos e Estruturas de Dados II 
+* PROJETO: Sistema de Gestão de Alunos de Autoescola
+* ARQUIVO: programa.c 
+* DESCRICAO: Programa principal com os módulos logs.h, dados.h e autenticacao.h integrados.  
+*/ 
+
+
 #include "autenticacao.h"
 #include "dados.h"
 #include "logs.h"
@@ -6,7 +14,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-/* --- Função Auxiliar para limpar o buffer ---
+/* === Função Auxiliar para limpar o buffer ===
    Serve para consumir caracteres extras caso o usuário digite
    mais do que o permitido, evitando pular o próximo input */
 void limpar_restos_buffer(void) {
@@ -83,7 +91,6 @@ int main(void){
                 }
 
                 if (inserir_aluno(nome, cpf, idade, usuario_logado)) {
-                    salvar_dados();
                     registrarLog(usuario_logado, LOG_INSERCAO, nome);
                 }
                 break;
@@ -166,8 +173,6 @@ int main(void){
                 ler_texto(cpf, sizeof(cpf));
 
                 if (remover_aluno(cpf, usuario_logado)) {
-                    salvar_dados();
-
                     snprintf(mensagem_log, sizeof(mensagem_log), "EXCLUSAO; CPF do registro: %s", cpf);
                     registrarLog(usuario_logado, LOG_EXCLUSAO, mensagem_log);
                 }
@@ -176,7 +181,8 @@ int main(void){
 
             /* ================================================= */
             case 6:
-                printf("\nAte a proxima!\n");
+                printf("\nAté a proxima!\n");
+                salvar_dados();
                 registrarSaida("Encerramento da aplicacao", usuario_logado);
                 registrarLog(usuario_logado, LOG_SAIDA, "Usuario saiu da aplicacao");
                 loop = 0;
