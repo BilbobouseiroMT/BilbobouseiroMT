@@ -4,7 +4,7 @@ Este projeto foi desenvolvido como requisito para a disciplina de Algoritmos e E
 
 ---
 
-## 👥 Integrantes
+## Integrantes
 
 | Foto | Informações | Papel Sugerido |
 | :---: | :--- | :--- |
@@ -14,5 +14,3 @@ Este projeto foi desenvolvido como requisito para a disciplina de Algoritmos e E
 | <img src="membro4.png" width="100"> | **Nome:** João Pedro Correa Soares   <br> **RGA:** 202421901035 | Desenvolver a parte de autenticação |
 
 ---
-
-> **Nota:** A estrutura deste arquivo segue o requisito de identificação presente na seção 5 do enunciado.
