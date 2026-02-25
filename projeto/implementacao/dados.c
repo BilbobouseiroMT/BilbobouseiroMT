@@ -46,7 +46,7 @@ int inserir_aluno(const char *nome, const char *cpf, int idade, const char *usua
     /*verifica a unicidade do cpf*/
     while (p) {
         if (strcmp(p->cpf, cpf) == 0) {
-            registrarSaida("ERRO; CPF DUPLICADO", usuario);
+            registrar_saida("ERRO; CPF DUPLICADO", usuario);
             printf("Não foi possível concluir a operação! (CPF já existente no banco de dados)\n");
             return 0;
         }
@@ -120,7 +120,7 @@ int remover_aluno(const char *cpf, const char *usuario) {
 
             strcpy(linha, "EXCLUSÃO; SUCESSO");
 
-            registrarSaida(linha, usuario);
+            registrar_saida(linha, usuario);
             return 1;
         }
 
@@ -134,7 +134,7 @@ int remover_aluno(const char *cpf, const char *usuario) {
 
     strcpy(linha, "EXCLUSAO; NÃO ENCONTRADO");
 
-    registrarSaida(linha, usuario);
+    registrar_saida(linha, usuario);
     return 0;
 }
 
@@ -262,7 +262,7 @@ int editar_aluno(const char *cpf_antigo, const char *novo_nome, int nova_idade, 
         // Verifica se o novo_cpf ja pertence a outro aluno
         if (buscar_aluno(novo_cpf, usuario) != NULL) {
             printf("Erro: O novo CPF %s ja esta em uso.\n", novo_cpf);
-            registrarSaida("EDICAO; FALHA; CPF DUPLICADO", usuario);
+            registrar_saida("EDICAO; FALHA; CPF DUPLICADO", usuario);
             return 0;
         }
 
@@ -276,7 +276,7 @@ int editar_aluno(const char *cpf_antigo, const char *novo_nome, int nova_idade, 
 
         // Insere como um novo registro (isso gera novo hash e novo log de insercao)
         if (inserir_aluno(novo_nome, novo_cpf, nova_idade, usuario)) {
-            registrarSaida("EDICAO; SUCESSO; CPF ALTERADO", usuario);
+            registrar_saida("EDICAO; SUCESSO; CPF ALTERADO", usuario);
             return 1;
         }
         return 0;
@@ -291,7 +291,7 @@ int editar_aluno(const char *cpf_antigo, const char *novo_nome, int nova_idade, 
 
     char mensagem_log[200];
     snprintf(mensagem_log, sizeof(mensagem_log), "EDICAO; NOME:%s; IDADE:%d", novo_nome, nova_idade);
-    registrarSaida(mensagem_log, usuario);
+    registrar_saida(mensagem_log, usuario);
 
     printf("Dados atualizados com sucesso!\n");
     return 1;
