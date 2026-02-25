@@ -38,9 +38,11 @@ O projeto final de **Algoritmos e Estrutura de Dados II** evidencia a aplicaçã
 A integração entre autenticação, dados, logs e apresentação demonstra não apenas o domínio técnico, mas também a capacidade de organização, persistência e trabalho em equipe.  
 Assim, o sistema desenvolvido cumpre seu papel acadêmico e serve como base para futuras evoluções.  
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## Detalhe Técnico
-
 ---
+
+## Detalhes Técnicos
+
+
 
 ### Estrutura Utilizada
 O sistema foi implementado utilizando uma **Tabela Hash com Encadeamento Externo**.  
@@ -80,5 +82,6 @@ Esse recurso assegura transparência e conformidade com os requisitos do projeto
 ## Conclusão
 A implementação demonstra a aplicação prática dos conceitos de **estruturas de dados** e **algoritmos de acesso eficiente**, conciliando desempenho, organização e confiabilidade.  
 O uso da Tabela Hash com Encadeamento Externo, aliado à persistência e auditoria, evidencia a robustez da solução e sua adequação ao contexto acadêmico proposto.
+
 
 
