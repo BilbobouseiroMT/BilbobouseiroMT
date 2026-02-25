@@ -8,13 +8,13 @@ Este projeto foi desenvolvido como projeto final proposto pelo Professor: Renan,
 
 | Foto | Informações | Papel Sugerido |
 | :---: | :--- | :--- |
-| <img src="membro1.jpeg" width="100"> | **Nome:** Paulo César Silva de Almeida Filho <br> 
-**RGA:** 202421901055 | Desenvolveu a parte de dados |
-| <img src="membro2.jpg" width="100"> | **Nome:** Nicolas Gabriel Alves Lima Pereira <br> 
-**RGA:** 202421901053 | Desenvolveu a parte de logs |
-| <img src="membro3.png" width="100"> | **Nome:** Gabriel Ferreira Pollis <br> 
-**RGA:** 202421901030 | Desenvolveu a parte de autenticação |
-| <img src="membro4.png" width="100"> | **Nome:** João Pedro Correa Soares   <br> 
-**RGA:** 202421901035 | Desenvolveu a parte de autenticação |
+| <img src="membro1.jpeg" width="100"> | **Nome:** Paulo César Silva de Almeida Filho <br> | Desenvolver a parte de dados |
+**RGA:** 202421901055 
+| <img src="membro2.jpg" width="100"> | **Nome:** Nicolas Gabriel Alves Lima Pereira <br> | Desenvolver a parte de logs |
+**RGA:** 202421901053 
+| <img src="membro3.png" width="100"> | **Nome:** Gabriel Ferreira Pollis <br> | Desenvolver a parte de autenticação |
+**RGA:** 202421901030
+| <img src="membro4.png" width="100"> | **Nome:** João Pedro Correa Soares  <br>  | Desenvolver a parte de autenticação |
+**RGA:** 202421901035 
 
 ---
