@@ -6,7 +6,7 @@ Este projeto foi desenvolvido como projeto final proposto pelo Professor: Renan,
 
 ## Integrantes
 
-| Foto | Informações | Papel Sugerido |
+| Foto | Informação | Papel Sugerido |
 | :---: | :--- | :--- |
 | <img src="membro1.jpeg" width="100"> | **Nome:** Paulo César Silva de Almeida Filho <br> | Desenvolver a parte de dados |
 **RGA:** 202421901055 
