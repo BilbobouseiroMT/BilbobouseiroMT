@@ -12,7 +12,7 @@
    IMPLEMENTAÇÃO DA INTERFACE PÚBLICA
    ========================================================= */
 
-void registrarLog(const char *usuario, TipoLog tipo, const char *detalhe) {
+void registrar_log(const char *usuario, TipoLog tipo, const char *detalhe) {
     FILE *arquivo;
     arquivo = fopen("../dados/logs.csv", "a");
 
@@ -52,7 +52,7 @@ void registrarLog(const char *usuario, TipoLog tipo, const char *detalhe) {
     fclose(arquivo);
 }
 
-void registrarSaida(const char *linha, const char *usuario)
+void registrar_saida(const char *linha, const char *usuario)
 {
     FILE *arquivo = fopen("../saida/saida.csv", "w"); // W !!
     if (!arquivo) return;

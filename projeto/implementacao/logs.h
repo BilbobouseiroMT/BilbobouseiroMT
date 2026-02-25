@@ -37,7 +37,7 @@ typedef enum {
    tipo    -> tipo de log (um dos valores de TipoLog)
    detalhe -> informações adicionais sobre a ação
 */
-void registrarLog(const char *usuario, TipoLog tipo, const char *detalhe);
+void registrar_log(const char *usuario, TipoLog tipo, const char *detalhe);
 /*
  Registra um evento de log no sistema.
 
@@ -62,7 +62,7 @@ void registrarLog(const char *usuario, TipoLog tipo, const char *detalhe);
      a interface pública.
 */
 
-void registrarSaida(const char *linha, const char *usuario);
+void registrar_saida(const char *linha, const char *usuario);
 
 /*
 Registra as operações e as mensagens exibidas na tela no arquivo saida.csv

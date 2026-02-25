@@ -94,9 +94,9 @@ int main(void){
 
                     char linha[100];
 
-                    registrarLog(usuario_logado, LOG_INSERCAO, nome);
+                    registrar_log(usuario_logado, LOG_INSERCAO, nome);
                     sprintf(linha, "INSERCAO;%s;%s;%d", nome, cpf, idade);
-                    registrarSaida(linha, usuario_logado);
+                    registrar_saida(linha, usuario_logado);
                 }
                 break;
             }
@@ -104,7 +104,7 @@ int main(void){
             /* ================================================= */
             case 2:
                 listar_alunos_ordenados_por_nome();
-                registrarLog(usuario_logado, LOG_LISTAGEM, "Exibicao da lista de alunos");
+                registrar_log(usuario_logado, LOG_LISTAGEM, "Exibicao da lista de alunos");
                 break;
 
             /* ================================================= */
@@ -131,8 +131,8 @@ int main(void){
                 snprintf(mensagem_log, sizeof(mensagem_log), "BUSCA; Parametro: %s", cpf);
                 
                 // Nota: registrarSaida parece duplicado com log, mas mantive seu original
-                registrarSaida(linha, usuario_logado); 
-                registrarLog(usuario_logado, LOG_BUSCA, mensagem_log);
+                registrar_saida(linha, usuario_logado); 
+                registrar_log(usuario_logado, LOG_BUSCA, mensagem_log);
                 break;
             }
 
@@ -167,7 +167,7 @@ int main(void){
                     editar_aluno(cpf, novo_nome, nova_idade, novo_cpf, usuario_logado);
                     
                     snprintf(mensagem_log, sizeof(mensagem_log), "EDICAO | CPF do registro: %s", cpf);
-                    registrarLog(usuario_logado, LOG_EDICAO, mensagem_log);
+                    registrar_log(usuario_logado, LOG_EDICAO, mensagem_log);
                 } else {
                     printf("Idade invalida. Edicao cancelada.\n");
                 }
@@ -183,7 +183,7 @@ int main(void){
 
                 if (remover_aluno(cpf, usuario_logado)) {
                     snprintf(mensagem_log, sizeof(mensagem_log), "EXCLUSAO; CPF do registro: %s", cpf);
-                    registrarLog(usuario_logado, LOG_EXCLUSAO, mensagem_log);
+                    registrar_log(usuario_logado, LOG_EXCLUSAO, mensagem_log);
                 }
                 break;
             }
@@ -192,7 +192,7 @@ int main(void){
             case 6:
                 printf("\nAté a proxima!\n");
                 salvar_dados();
-                registrarLog(usuario_logado, LOG_SAIDA, "Usuario saiu da aplicacao");
+                registrar_log(usuario_logado, LOG_SAIDA, "Usuario saiu da aplicacao");
                 loop = 0;
                 break;
 

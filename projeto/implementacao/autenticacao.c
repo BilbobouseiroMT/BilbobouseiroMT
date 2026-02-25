@@ -90,10 +90,10 @@ int autenticar(char usuario_logado[]) {
             printf("\nLogin ou senha incorretos.\n");
             strcpy(detalhe, "LOGIN INVALIDO");
             strcpy(usuario_logado, "Desconhecido");
-            registrarLog(usuario_logado, LOG_LOGIN_FALHA, detalhe);
+            registrar_log(usuario_logado, LOG_LOGIN_FALHA, detalhe);
 
             strcpy(linha, "LOGIN; DADOS INVÁLIDOS");
-            registrarSaida(linha, usuario_logado);
+            registrar_saida(linha, usuario_logado);
             
 
             return 0;
@@ -103,10 +103,10 @@ int autenticar(char usuario_logado[]) {
     // Se saiu do while, é porque autenticou com sucesso
     printf("Login realizado com sucesso.\n");
     strcpy(detalhe, "LOGIN REALIZADO COM SUCESSO");
-    registrarLog(usuario_logado, LOG_LOGIN_SUCESSO, detalhe);
+    registrar_log(usuario_logado, LOG_LOGIN_SUCESSO, detalhe);
 
     strcpy(linha, "LOGIN; REALIZADO COM SUCESSO");
-    registrarSaida(linha, usuario_logado);
+    registrar_saida(linha, usuario_logado);
 
     // Fecha o arquivo de usuários
     fclose(f);
