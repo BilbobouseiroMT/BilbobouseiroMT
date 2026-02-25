@@ -91,7 +91,12 @@ int main(void){
                 }
 
                 if (inserir_aluno(nome, cpf, idade, usuario_logado)) {
+
+                    char linha[100];
+
                     registrarLog(usuario_logado, LOG_INSERCAO, nome);
+                    sprintf(linha, "INSERCAO;%s;%s;%d", nome, cpf, idade);
+                    registrarSaida(linha, usuario_logado);
                 }
                 break;
             }
@@ -105,6 +110,7 @@ int main(void){
             /* ================================================= */
             case 3: {
                 char mensagem_log[150];
+                char linha[100];
 
                 printf("CPF para busca: ");
                 ler_texto(cpf, sizeof(cpf));
@@ -115,14 +121,17 @@ int main(void){
                     printf("\n----------------------------\n");
                     printf("CPF: %s\nNOME: %s\nIDADE: %d", p->cpf, p->nome, p->idade);
                     printf("\n----------------------------\n");
+
+                    snprintf(linha, sizeof(linha), "\nCPF: %s;\nNOME: %s;\nIDADE: %d;", p->cpf, p->nome, p->idade);
                 } else {
                     printf("\nAluno nao encontrado.\n");
+                    snprintf(linha, sizeof(linha), "Aluno nao encontrado");
                 }
 
                 snprintf(mensagem_log, sizeof(mensagem_log), "BUSCA; Parametro: %s", cpf);
                 
                 // Nota: registrarSaida parece duplicado com log, mas mantive seu original
-                registrarSaida(mensagem_log, usuario_logado); 
+                registrarSaida(linha, usuario_logado); 
                 registrarLog(usuario_logado, LOG_BUSCA, mensagem_log);
                 break;
             }
@@ -183,7 +192,6 @@ int main(void){
             case 6:
                 printf("\nAté a proxima!\n");
                 salvar_dados();
-                registrarSaida("Encerramento da aplicacao", usuario_logado);
                 registrarLog(usuario_logado, LOG_SAIDA, "Usuario saiu da aplicacao");
                 loop = 0;
                 break;
