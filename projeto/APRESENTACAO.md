@@ -1,4 +1,4 @@
-# Projeto Final - Algoritmos e Estrutura de Dados II
+# Projeto Final - Sistema Autoescola - Algoritmos e Estrutura de Dados II
 
 ## Introdução
 O presente trabalho tem como objetivo desenvolver um sistema que integra conceitos fundamentais de **Algoritmos e Estrutura de Dados II**, aplicados em um contexto prático.  
@@ -80,4 +80,5 @@ Esse recurso assegura transparência e conformidade com os requisitos do projeto
 ## Conclusão
 A implementação demonstra a aplicação prática dos conceitos de **estruturas de dados** e **algoritmos de acesso eficiente**, conciliando desempenho, organização e confiabilidade.  
 O uso da Tabela Hash com Encadeamento Externo, aliado à persistência e auditoria, evidencia a robustez da solução e sua adequação ao contexto acadêmico proposto.
+
 
