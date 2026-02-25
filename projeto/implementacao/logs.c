@@ -60,7 +60,7 @@ void registrarSaida(const char *linha, const char *usuario)
     time_t agora = time(NULL);
     struct tm *infoTempo = localtime(&agora);
 
-    fprintf(arquivo, "[%02d/%02d/%04d %02d:%02d:%02d] Usuario: %s | Operação: %s\n", infoTempo->tm_mday,
+    fprintf(arquivo, "[%02d/%02d/%04d %02d:%02d:%02d] Usuario: %s; %s\n", infoTempo->tm_mday,
             infoTempo->tm_mon + 1,
             infoTempo->tm_year + 1900,
             infoTempo->tm_hour,

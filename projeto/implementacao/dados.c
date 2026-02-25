@@ -69,8 +69,6 @@ int inserir_aluno(const char *nome, const char *cpf, int idade, const char *usua
     char linha[150];
     sprintf(linha, "INSERCAO;%s;%s;%d", nome, cpf, idade);
 
-    registrarSaida(linha, usuario);
-
     return 1;
 }
 
@@ -89,15 +87,11 @@ ITEM* buscar_aluno(const char *cpf, const char *usuario) {
                      "BUSCA; Nome: %s; CPF: %s; Idade: %d",
                      p->nome, p->cpf, p->idade);
 
-            registrarSaida(linha, usuario);
             return p;
         }
         p = p->prox;
     }
 
-    strcpy(linha, "Falha na busca (Item não encontrado)");
-
-    registrarSaida(linha, usuario);
     return NULL;
 }
 

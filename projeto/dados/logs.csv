@@ -86,3 +86,145 @@
 [29/01/2026 06:55:15] Usuario: eu | Acao: EDICAO | Detalhe: EDICAO | CPF do registro: 12345678900
 [29/01/2026 06:55:18] Usuario: eu | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
 [29/01/2026 06:55:22] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 06:17:35] Usuario: Desconhecido | Acao: LOGIN_FALHA | Detalhe: LOGIN INVALIDO
+[25/02/2026 06:18:54] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 06:18:54] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 06:20:26] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 06:20:26] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 06:21:22] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 06:21:22] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 06:24:19] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 06:24:19] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 06:27:25] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 06:27:25] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 06:30:58] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 06:31:11] Usuario: eu | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
+[25/02/2026 06:31:20] Usuario: eu | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
+[25/02/2026 06:31:22] Usuario: eu | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
+[25/02/2026 06:31:55] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 06:32:01] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 06:32:29] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 06:33:56] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 06:33:56] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 06:34:51] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 06:34:51] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 06:35:46] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 06:35:46] Usuario: eu | Acao: INSERCAO | Detalhe: Arnold Schwarzenegger
+[25/02/2026 06:35:46] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 06:35:58] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 06:35:58] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 06:36:12] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 06:36:12] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 06:36:20] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 06:36:20] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 06:36:22] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 06:36:22] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 06:43:09] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 06:43:09] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 06:50:51] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 06:50:51] Usuario: eu | Acao: BUSCA | Detalhe: BUSCA; Parametro: 12345678900
+[25/02/2026 06:50:51] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 06:52:07] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 06:52:07] Usuario: eu | Acao: BUSCA | Detalhe: BUSCA; Parametro: 12345678900
+[25/02/2026 06:52:07] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 06:59:27] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 06:59:27] Usuario: eu | Acao: BUSCA | Detalhe: BUSCA; Parametro: 12345678900
+[25/02/2026 06:59:27] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:01:02] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:01:02] Usuario: eu | Acao: BUSCA | Detalhe: BUSCA; Parametro: 12345678900
+[25/02/2026 07:01:02] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:03:09] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:03:09] Usuario: eu | Acao: BUSCA | Detalhe: BUSCA; Parametro: 12345678900
+[25/02/2026 07:03:09] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:04:09] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:04:09] Usuario: eu | Acao: BUSCA | Detalhe: BUSCA; Parametro: 98765432100
+[25/02/2026 07:04:09] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:05:20] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:05:20] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:05:46] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:05:46] Usuario: eu | Acao: EXCLUSAO | Detalhe: EXCLUSAO; CPF do registro: 12345678900
+[25/02/2026 07:05:46] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:07:01] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:07:01] Usuario: eu | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
+[25/02/2026 07:07:01] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:07:18] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:07:18] Usuario: eu | Acao: INSERCAO | Detalhe: Arnold Schwarzenegger
+[25/02/2026 07:07:18] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:07:23] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:07:23] Usuario: eu | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
+[25/02/2026 07:07:23] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:08:48] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:08:48] Usuario: eu | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
+[25/02/2026 07:08:48] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:09:29] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:09:29] Usuario: eu | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
+[25/02/2026 07:09:29] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:10:31] Usuario: eu | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:10:31] Usuario: eu | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
+[25/02/2026 07:10:31] Usuario: eu | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:14:07] Usuario: admin | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:14:07] Usuario: admin | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
+[25/02/2026 07:14:07] Usuario: admin | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:14:18] Usuario: Desconhecido | Acao: LOGIN_FALHA | Detalhe: LOGIN INVALIDO
+[25/02/2026 07:14:23] Usuario: admin | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:14:23] Usuario: admin | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:14:29] Usuario: admin | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:14:29] Usuario: admin | Acao: INSERCAO | Detalhe: Arnold Schwarzenegger
+[25/02/2026 07:14:29] Usuario: admin | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:14:36] Usuario: admin | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:14:36] Usuario: admin | Acao: INSERCAO | Detalhe: Paulo
+[25/02/2026 07:14:36] Usuario: admin | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:14:40] Usuario: admin | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:14:40] Usuario: admin | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
+[25/02/2026 07:14:40] Usuario: admin | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:14:44] Usuario: admin | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:14:44] Usuario: admin | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
+[25/02/2026 07:14:44] Usuario: admin | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:14:59] Usuario: admin | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:14:59] Usuario: admin | Acao: BUSCA | Detalhe: BUSCA; Parametro: 12345678900
+[25/02/2026 07:14:59] Usuario: admin | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:15:14] Usuario: admin | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:15:14] Usuario: admin | Acao: BUSCA | Detalhe: BUSCA; Parametro: 98765432100
+[25/02/2026 07:15:14] Usuario: admin | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:15:22] Usuario: admin | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:15:22] Usuario: admin | Acao: EXCLUSAO | Detalhe: EXCLUSAO; CPF do registro: 98765432100
+[25/02/2026 07:15:22] Usuario: admin | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:17:38] Usuario: admin | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:17:38] Usuario: admin | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:17:55] Usuario: admin | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:17:55] Usuario: admin | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:18:29] Usuario: admin | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:18:29] Usuario: admin | Acao: INSERCAO | Detalhe: Paulo
+[25/02/2026 07:18:29] Usuario: admin | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:18:35] Usuario: admin | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:18:35] Usuario: admin | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:21:42] Usuario: Desconhecido | Acao: LOGIN_FALHA | Detalhe: LOGIN INVALIDO
+[25/02/2026 07:22:14] Usuario: admin | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:22:14] Usuario: admin | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:22:29] Usuario: admin | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:22:29] Usuario: admin | Acao: INSERCAO | Detalhe: Arnold Schwarzenegger
+[25/02/2026 07:22:29] Usuario: admin | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:22:51] Usuario: admin | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:22:51] Usuario: admin | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:23:35] Usuario: admin | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:23:35] Usuario: admin | Acao: LISTAGEM | Detalhe: Exibicao da lista de alunos
+[25/02/2026 07:23:35] Usuario: admin | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:23:52] Usuario: admin | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:23:52] Usuario: admin | Acao: BUSCA | Detalhe: BUSCA; Parametro: 12345678900
+[25/02/2026 07:23:52] Usuario: admin | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:24:54] Usuario: admin | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:24:54] Usuario: admin | Acao: BUSCA | Detalhe: BUSCA; Parametro: 12345678900
+[25/02/2026 07:24:54] Usuario: admin | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:25:03] Usuario: admin | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:25:03] Usuario: admin | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:25:16] Usuario: admin | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:25:16] Usuario: admin | Acao: BUSCA | Detalhe: BUSCA; Parametro: 98765432100
+[25/02/2026 07:25:16] Usuario: admin | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:25:21] Usuario: admin | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:25:21] Usuario: admin | Acao: BUSCA | Detalhe: BUSCA; Parametro: 12345678900
+[25/02/2026 07:25:21] Usuario: admin | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:25:26] Usuario: admin | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:25:26] Usuario: admin | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
+[25/02/2026 07:25:37] Usuario: admin | Acao: LOGIN_SUCESSO | Detalhe: LOGIN REALIZADO COM SUCESSO
+[25/02/2026 07:25:37] Usuario: admin | Acao: EXCLUSAO | Detalhe: EXCLUSAO; CPF do registro: 12345678900
+[25/02/2026 07:25:37] Usuario: admin | Acao: SAIDA | Detalhe: Usuario saiu da aplicacao
